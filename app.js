@@ -4,6 +4,16 @@ async function loadMetadata() {
     return response.json();
 }
 
+function prettyLabel(key) {
+    return key.trim().replace(/([a-z])([A-Z])/g, '$1 $2');
+}
+
+function prettyValue(val) {
+    if (val === 1) return 'Yes';
+    if (val === 0) return 'No';
+    return val;
+}
+
 function createPhotoElement(filename, metadata) {
     const div = document.createElement('div');
     div.className = 'photo-card';
@@ -13,15 +23,17 @@ function createPhotoElement(filename, metadata) {
     img.src = 'img/' + filename;
     img.alt = filename;
 
-    const title = document.createElement('h3');
-    title.textContent = metadata?.title || filename;
+    const metaDiv = document.createElement('div');
+    metaDiv.className = 'metadata';
 
-    const desc = document.createElement('p');
-    desc.textContent = metadata?.description || '';
+    for (const [key, value] of Object.entries(metadata)) {
+        const p = document.createElement('p');
+        p.textContent = `• ${prettyLabel(key)}: ${prettyValue(value)}`;
+        metaDiv.appendChild(p);
+    }
 
     div.appendChild(img);
-    div.appendChild(title);
-    div.appendChild(desc);
+    div.appendChild(metaDiv);
     return div;
 }
 
