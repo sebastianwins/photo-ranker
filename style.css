@@ -1,1 +1,40 @@
-This is a placeholder for style.css.
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #f7f7f7;
+}
+
+h1 {
+    text-align: center;
+}
+
+#photo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.photo-card {
+    width: 200px;
+    background: #fff;
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+.photo-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.photo-card.dragElem {
+    opacity: 0.4;
+}
+
+.photo-card.over {
+    border: 2px dashed #007BFF;
+}
