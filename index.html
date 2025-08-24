@@ -1,41 +1,49 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Photo Ranker — Review</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Photo Ranker — Drag & Rank</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-<header class="app-header"><h1>Photo Ranker — Review</h1><p class="subtitle">Place metadata.json in this folder, then open this file.</p></header>
-<section class="controls">
-  <div class="control">
-    <label>Metadata JSON:</label>
-    <input type="file" id="jsonFile" accept=".json" />
-    <button id="reloadDefault">Load default metadata.json</button>
+  <header class="app-header">
+    <h1>Photo Ranker — Drag & Rank</h1>
+    <div class="toolbar">
+      <div class="group">
+        <label>Player:</label>
+        <select id="playerSel">
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+        </select>
+      </div>
+      <div class="group">
+        <button id="clearBtn" title="Reset this player's order to default">Clear Player</button>
+        <button id="exportBtn" title="Download CSV of current order">Export CSV</button>
+      </div>
+      <div class="group status" id="status">Loading metadata…</div>
+    </div>
+  </header>
+
+  <main>
+    <div id="grid" class="grid" aria-live="polite"></div>
+  </main>
+
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-content">
+      <div class="modal-head">
+        <h2 id="modalTitle">Details</h2>
+        <button id="modalClose" aria-label="Close">×</button>
+      </div>
+      <div id="modalBody" class="modal-body"></div>
+    </div>
   </div>
-  <div class="control"><label>Player:</label>
-    <select id="playerSelect"><option>A</option><option>B</option><option>C</option></select>
-  </div>
-  <div class="control"><label>Rank:</label>
-    <input id="rankInput" type="number" min="1" step="1" placeholder="1"/><button id="saveRank">Save</button>
-  </div>
-  <div class="control">
-    <button id="prevBtn" class="nav">&larr; Prev</button>
-    <span id="progress">0 / 0</span>
-    <button id="nextBtn" class="nav">Next &rarr;</button>
-  </div>
-  <div class="control">
-    <button id="exportCsv">Export CSV</button><button id="validateBtn">Validate</button><button id="clearPlayerRanks">Clear Player</button>
-  </div>
-</section>
-<main class="content">
-  <div class="image-pane">
-    <div class="image-wrap"><img id="photo"/><div id="noImage" class="no-image hidden">No records loaded.</div><div id="doubleBadge" class="double-badge" style="display:none;">DOUBLE</div></div>
-    <div id="filename" class="filename"></div>
-  </div>
-  <div class="meta-pane"><h2>Metadata</h2><table id="metaTable"></table></div>
-</main>
-<footer class="app-footer"><div id="status">Status: Ready</div></footer>
-<script src="app.js"></script>
+
+  <footer class="app-footer">
+    <small>Tip: drag tiles to rank; double‑click a tile for metadata. Order is saved per player in your browser.</small>
+  </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>
