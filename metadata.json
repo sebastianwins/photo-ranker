@@ -1816,10 +1816,34 @@
     "Multiple_Flag": false
   },
   {
+    "filename": "tn_2025_M7_D19_232.jpg",
+    "image_url": "images/tn_2025m7d19_pull/tn_2025_M7_D19_232.jpg",
+    "Digital #": "2025_M7_D19_232.heic",
+    "Record#": "P_3678",
+    "Multiple": null,
+    "Multiple_Flag": false
+  },
+  {
+    "filename": "tn_2025_M7_D19_233.jpg",
+    "image_url": "images/tn_2025m7d19_pull/tn_2025_M7_D19_233.jpg",
+    "Digital #": "2025_M7_D19_233.heic",
+    "Record#": "P_3677",
+    "Multiple": null,
+    "Multiple_Flag": false
+  },
+  {
     "filename": "tn_2025_M7_D19_234.jpg",
     "image_url": "images/tn_2025m7d19_pull/tn_2025_M7_D19_234.jpg",
     "Digital #": "2025_M7_D19_234.heic",
     "Record#": "P_3676",
+    "Multiple": null,
+    "Multiple_Flag": false
+  },
+  {
+    "filename": "tn_2025_M7_D19_235.jpg",
+    "image_url": "images/tn_2025m7d19_pull/tn_2025_M7_D19_235.jpg",
+    "Digital #": "2025_M7_D19_235.heic",
+    "Record#": "P_3675",
     "Multiple": null,
     "Multiple_Flag": false
   },
