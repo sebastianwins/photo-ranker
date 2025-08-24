@@ -11,15 +11,7 @@
     <h1>Photo Ranker — Drag & Rank</h1>
     <div class="toolbar">
       <div class="group">
-        <label>Player:</label>
-        <select id="playerSel">
-          <option value="A">A</option>
-          <option value="B">B</option>
-          <option value="C">C</option>
-        </select>
-      </div>
-      <div class="group">
-        <button id="clearBtn" title="Reset this player's order to default">Clear Player</button>
+        <button id="clearBtn" title="Reset order to original">Reset Order</button>
         <button id="exportBtn" title="Download CSV of current order">Export CSV</button>
       </div>
       <div class="group status" id="status">Loading metadata…</div>
@@ -41,7 +33,7 @@
   </div>
 
   <footer class="app-footer">
-    <small>Tip: drag tiles to rank; double‑click a tile for metadata. Order is saved per player in your browser.</small>
+    <small>Tip: drag tiles to rank; double‑click a tile for metadata. Order is saved in your browser.</small>
   </footer>
 
   <script src="app.js"></script>
